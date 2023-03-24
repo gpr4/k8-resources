@@ -7,8 +7,8 @@ spec:
  - name: nginx
    image: nginx
    env:
-   - name: course
-     value: docker
-     name: trainer
-     value: siva
+  #  - name: course
+  #    value: docker
+  #    name: trainer
+  #    value: siva
      
