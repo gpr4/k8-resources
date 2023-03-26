@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
- name: debgu
+ name: debug
  labels:
   purpose: debug
 spec:
