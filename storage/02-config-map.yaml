@@ -119,7 +119,7 @@ spec:
       memory: "128Mi"
     ports:
      - containerPort: 80
-    volumes:
+ volumes:
     - name: nginx-config  
       configMap:
           name: nginx-conf
