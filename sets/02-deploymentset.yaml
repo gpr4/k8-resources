@@ -12,8 +12,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-     maxUnavailable: 1
-     maxSurge: 1
+     maxUnavailable: 1 # we asked for 10 and we are ok if 9 pods are available at the time of upgrade.
+     maxSurge: 1 # we asked for 10 and we are ok if 11 pods are running at the time of upgrade.
   template:
     metadata:
       labels:
