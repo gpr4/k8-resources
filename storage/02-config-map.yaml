@@ -53,7 +53,6 @@ data:
             try_files $uri /images/placeholder.jpg;
             }
 
-            
             location /nginx_status {
                 stub_status on;
                 access_log off;
