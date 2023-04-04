@@ -6,25 +6,17 @@ metadata:
     app: webapp
 spec:
   containers:
-    - image: nginx
-      name: main-application
+    - name: main-application
+      image: nginx
       volumeMounts:
-        - mountPath: /var/log/nginx
-          name: shared-logs
-
+        - name: shared-logs
+          mountPath: /var/log/nginx
     - name: sidecar-container
       image: busybox
-      command:
-        [
-          "sh",
-          "-c",
-          "while true; do cat /var/log/nginx/access.log; sleepp 30; done",
-        ]
+      command: ["sh","-c","while true; do cat /var/log/nginx/access.log; sleep 30; done"]
       volumeMounts:
-        - mountPath: /var/log/nginx
-          name: shared-logs
-
+        - name: shared-logs
+          mountPath: /var/log/nginx
   volumes:
     - name: shared-logs
-      emptyDir:
-        sizeLimit: {}
+      emptyDir: {}
